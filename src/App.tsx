@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Reserve from './pages/Reserve';
-import GlobalStyles from './styles/GlobalStyles';
-
+import LinkSocialMedia from './pages/LinkSocialMedia';
+import PostUpdates from './pages/PostUpdates';
+import SharePromotions from './pages/SharePromotions';
 function App() {
   return (
     <BrowserRouter>
-      <GlobalStyles />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/reserve" element={<Reserve />} />
+        <Route path="/link-social-media" element={<LinkSocialMedia />} />
+        <Route path="/post-updates" element={<PostUpdates />} />
+        <Route path="/share-promotions" element={<SharePromotions />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
 export default App;

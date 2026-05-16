@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './styles/menus.css';
+
 function Menus() {
-  const [menus, setMenus] = useState([]);
+  const [menus, setMenus] = useState([
+    { id: '1', name: 'Menu 1', price: 10, description: 'Description 1' },
+    { id: '2', name: 'Menu 2', price: 20, description: 'Description 2' }
+  ]);
   const navigate = useNavigate();
-  useEffect(() => {
-    axios.get('https://example.com/api/menus')
-      .then(response => setMenus(response.data))
-      .catch(error => console.error(error));
-  }, []);
+
   const handleNewMenu = () => navigate('/menu/new');
+
   return (
     <div className="menus">
       <h1>Menus</h1>

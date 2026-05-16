@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+
 function SharePromotions() {
   const [promotion, setPromotion] = useState('');
   const handlePromotionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPromotion(event.target.value);
   };
   const handleSharePromotion = () => {
-    axios.post('/api/share-promotion', {
-      promotion
-    });
+    alert(`Promotion: ${promotion}`);
   };
   return (
     <div>

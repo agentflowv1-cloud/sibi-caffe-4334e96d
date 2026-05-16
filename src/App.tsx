@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import LinkSocialMedia from './pages/LinkSocialMedia';
-import PostUpdates from './pages/PostUpdates';
-import SharePromotions from './pages/SharePromotions';
+import Menus from './pages/Menus';
+import MenuForm from './pages/MenuForm';
+import MenuDetails from './pages/MenuDetails';
+import './styles/app.css';
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/link-social-media" element={<LinkSocialMedia />} />
-        <Route path="/post-updates" element={<PostUpdates />} />
-        <Route path="/share-promotions" element={<SharePromotions />} />
+        <Route path="/" element={<Menus />} />
+        <Route path="/menu/new" element={<MenuForm />} />
+        <Route path="/menu/:id" element={<MenuDetails />} />
       </Routes>
     </BrowserRouter>
   );

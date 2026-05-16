@@ -4,6 +4,7 @@ import Menus from './pages/Menus';
 import MenuForm from './pages/MenuForm';
 import MenuDetails from './pages/MenuDetails';
 import './styles/app.css';
+
 function App() {
   return (
     <BrowserRouter>

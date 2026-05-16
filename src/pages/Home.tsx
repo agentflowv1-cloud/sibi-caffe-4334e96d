@@ -1,14 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 function Home() {
   return (
     <div>
-      <h1>Welcome to our restaurant!</h1>
-      <p>Reserve a table by clicking the link below.</p>
-      <Link to="/reserve">Reserve a Table</Link>
+      <h1>Welcome to Sibi Caffe</h1>
+      <p>Link your social media accounts to enhance your experience.</p>
+      <a href="/link-social-media">Link Social Media</a>
     </div>
   );
 }
-
 export default Home;

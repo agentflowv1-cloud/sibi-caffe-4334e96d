@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+
 function LinkSocialMedia() {
   const [facebookLink, setFacebookLink] = useState('');
   const [instagramLink, setInstagramLink] = useState('');
@@ -10,10 +10,7 @@ function LinkSocialMedia() {
     setInstagramLink(event.target.value);
   };
   const handleLinkSocialMedia = () => {
-    axios.post('/api/link-social-media', {
-      facebookLink,
-      instagramLink
-    });
+    alert(`Facebook: ${facebookLink}, Instagram: ${instagramLink}`);
   };
   return (
     <div>

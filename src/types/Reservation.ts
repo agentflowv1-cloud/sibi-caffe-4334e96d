@@ -4,5 +4,4 @@ interface Reservation {
   time: string;
   tableSize: string;
 }
-
 export default Reservation;

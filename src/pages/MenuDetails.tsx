@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './styles/menuDetails.css';
+
 function MenuDetails() {
   const { id } = useParams();
   const [menu, setMenu] = useState({ id: '', name: '', price: 0, description: '' });
-  useEffect(() => {
-    axios.get(`https://example.com/api/menus/${id}`)
-      .then(response => setMenu(response.data))
-      .catch(error => console.error(error));
+
+  const sampleMenu = {
+    '1': { id: '1', name: 'Menu 1', price: 10, description: 'Description 1' },
+    '2': { id: '2', name: 'Menu 2', price: 20, description: 'Description 2' }
+  };
+
+  React.useEffect(() => {
+    setMenu(sampleMenu[id]);
   }, [id]);
+
   return (
     <div className="menu-details">
       <h1>{menu.name}</h1>

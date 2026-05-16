@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './styles/menuForm.css';
+
 function MenuForm() {
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState('');
   const navigate = useNavigate();
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    axios.post('https://example.com/api/menus', { name, price, description })
-      .then(() => navigate('/'))
-      .catch(error => console.error(error));
+    const sampleMenus = [
+      { id: '1', name: 'Menu 1', price: 10, description: 'Description 1' },
+      { id: '2', name: 'Menu 2', price: 20, description: 'Description 2' }
+    ];
+    sampleMenus.push({ id: `${sampleMenus.length + 1}`, name, price, description });
+    navigate('/');
   };
+
   return (
     <div className="menu-form">
       <h1>New Menu</h1>

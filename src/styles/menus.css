@@ -1,0 +1,9 @@
+.menus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.menus ul {
+  list-style: none;
+}

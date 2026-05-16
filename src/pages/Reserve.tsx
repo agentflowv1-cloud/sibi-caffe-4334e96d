@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 function Reserve() {
   const [name, setName] = useState('');
@@ -11,13 +10,7 @@ function Reserve() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const reservationData = { name, date, time, tableSize };
-    axios.post('/api/reserve', reservationData)
-      .then((response) => {
-        setReservation(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    setReservation(reservationData);
   };
 
   return (
@@ -60,7 +53,6 @@ function Reserve() {
         </div>
       )}
     </div>
- );
+  );
 }
-
 export default Reserve;
